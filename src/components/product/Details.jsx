@@ -22,8 +22,8 @@ function Details() {
   };
   return (
     <div>
-      <div className="flex border shadow mb-3">
-        <div className="rounded w-72 mb-6 px-2 py-1 ">
+      <div className="flex border flex-col md:flex-row  shadow mb-3">
+        <div className="rounded w-full  md:w-72 mb-6 px-2 py-1 ">
           <Slider {...settings}>
             {state?.images?.map((itm, index) => (
               <img key={index} src={itm} alt={state?.productName} className="w-72 mr-2 h-96 object-contain" />

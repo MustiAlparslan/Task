@@ -28,7 +28,7 @@ export const ListAllProducts = ({ data }) => {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="flex items-center flex-wrap md:justify-between justify-center ">
+      className="w-full flex items-center flex-wrap md:justify-between justify-center ">
       {data && data?.map(product => (
         <Product data={product} key={product?.id} variant={item} />
       ))}

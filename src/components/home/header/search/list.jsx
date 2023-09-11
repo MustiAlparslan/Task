@@ -6,9 +6,6 @@ import { useSelector } from "react-redux";
 export default function List(){
   const searchList =useSelector(state => state.searchList.searchList)
 
-  useEffect(() => {
-    console.log('state' , searchList)
-  }, [])
 
   const ListProducts = () => {
     return (
@@ -23,8 +20,7 @@ export default function List(){
 
     return (
         <div>
-            <h2>({searchList?.length}) sonuç listelendi</h2>
-            <div></div>
+            <h2 className="mb-1">({searchList?.length}) sonuç listelendi</h2>
             <div>
                <ListProducts/> 
             </div>

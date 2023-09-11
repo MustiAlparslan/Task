@@ -11,11 +11,11 @@ export const NavBar = () =>{
     return (
         <div className="flex items-center gap-3">
             <div>
-                <Link to={"/favorites"} className="hover:opacity-50 text-customBlue flex gap-1 items-center"><AiOutlineHeart size={18} /><span className="md:visible hidden">Favorilerim</span> </Link>
+                <Link to={"/favorites"} className="hover:opacity-50 text-customBlue flex gap-1 items-center"><AiOutlineHeart size={18} /><span className="lg:visible md:visible invisible">Favorilerim</span> </Link>
             </div>
             
             <div className="flex items-center gap-1">
-                <Link to="/basket"   className="hover:opacity-50 text-customBlue flex gap-1 items-center"><AiOutlineShoppingCart  size={18} /><span className="md:visible hidden">Sepetim</span></Link>
+                <Link to="/basket"   className="hover:opacity-50 text-customBlue flex gap-1 items-center"><AiOutlineShoppingCart  size={18} /><span className="md:visible invisible">Sepetim</span></Link>
                 {basketList?.length  !== 0   && 
                     <p className="px-2 py-1 text-white rounded-full bg-customBlue text-xs"><span>{TOTAL_QUANTITY}</span></p>
                 }

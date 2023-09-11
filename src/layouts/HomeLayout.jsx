@@ -1,5 +1,5 @@
 import React from "react"
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Header } from "../components/home/header";
 
 function HomeLayout() {
@@ -11,8 +11,18 @@ function HomeLayout() {
             <Outlet/>
           </div>
 
-        <footer className="w-full min-h-[175px] bg-customBlue mt-auto  ">
-        
+        <footer className="w-full min-h-[150px] bg-customBlue mt-auto  p-6 text-white ">
+          <div>
+            <div>
+              <Link  className="font-light hover:opacity-50 hover:border-b" to={'/'}>Anasayfa</Link>
+            </div>
+            <div>
+              <Link  className="font-light hover:opacity-50 hover:border-b " to={'/favorites'}>Favoriler</Link>
+            </div>
+            <div>
+              <Link className="font-light hover:opacity-50 hover:border-b"  to={'basket'}>Sepetim</Link>
+            </div>
+          </div>
         </footer>
       </div>
     </React.Fragment>

@@ -5,7 +5,6 @@ export class Requests {
         try {
             const RESPONSE = await axios.get("https://dummyjson.com/products")
             if(RESPONSE?.status === 200){
-                console.log(RESPONSE?.data?.products)
                 return RESPONSE?.data?.products
             }else{
                 return [] 
@@ -18,7 +17,6 @@ export class Requests {
         try {
             const RESPONSE = await axios.get("https://dummyjson.com/products/search?q="+ search)
             if(RESPONSE?.status === 200){
-                console.log('ara' , RESPONSE?.data?.products)
                 return RESPONSE?.data?.products
             }else{
                 return [] 

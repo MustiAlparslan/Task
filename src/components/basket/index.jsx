@@ -14,11 +14,11 @@ const Basket = () => {
             <div>
                 {basketList?.map(item => (
                     <div className="shadow my-2 border justify-between rounded flex-1 py-2 px-1 flex items-center mb-2 gap-2">
-                        <div className="flex items-center gap-3">
-                            <img src={item?.imageURL} alt={item?.productName} className="object-contain w-28 h-28 rounded-md" />
+                        <div className="flex md:items-center gap-3 flex-col md:flex-row">
+                            <img src={item?.images[0]} alt={item?.title} className="object-contain w-28 h-28 rounded-md" />
                             <div className="w-3/4 ">
-                                <p className="font-bold truncate">{item?.description}</p>
-                                <h2 className="text-sm " >{item?.productName}</h2>
+                                <p className="font-bold truncate text-sm md:text-md">{item?.description}</p>
+                                <h2 className="text-xs md:text-sm " >{item?.title}</h2>
                             </div>
                         </div>
                         <div className="flex items-center gap-5">
@@ -30,7 +30,6 @@ const Basket = () => {
                             <h2> {item?.quantity * item?.price} <span>TL</span></h2>
                             <button onClick={() => {
                                 dispatch(deleteBasket({ id: item.id }))
-                                console.log(item)
                             }}>
                                 <BsFillTrashFill className="text-red-600 hover:opacity-70" />
                             </button>
@@ -44,12 +43,12 @@ const Basket = () => {
         <div>
             {basketList?.length ?
                 <>
-                    <div className="w-full flex gap-3 justify-between">
+                    <div className="w-full flex gap-3 flex-col md:flex-row justify-between">
                         <div>
                             <h2 className="pl-2">Sepetinizde ({TOTAL_QUANTITY}) ürün var!</h2>
                             <ListBasket />
                         </div>
-                        <div className="mt-8  h-min border rounded w-1/4 shadow px-3 py-2">
+                        <div className="mt-8 w-full  h-min border rounded w-1/4 shadow px-3 py-2">
                             <h2 className="text-lg font-bold">Sipariş Özeti</h2>
                             <p>Toplam Tutar: {TOTAL} TL</p>
                             <p>Kargo Toplam: -100 TL</p>
