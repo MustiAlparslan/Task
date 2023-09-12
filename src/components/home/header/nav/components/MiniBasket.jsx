@@ -17,8 +17,8 @@ function useMenuAnimation(isOpen) {
             "div",
             {
                 clipPath: isOpen
-                    ? "inset(0% 0% 0% 0% round 10px)"
-                    : "inset(10% 50% 90% 50% round 10px)"
+                    ? "inset(0% 0% 0% 0%)"
+                    : "inset(10% 50% 90% 50% )"
             },
             {
                 type: "spring",
@@ -48,31 +48,36 @@ export function MiniBasket({ isHovered }) {
     const scope = useMenuAnimation(isHovered);
 
     return (
-        <motion.div
-            ref={scope}
-            whileTap={{ scale: 0.97 }} className=" absolute w-64 z-40	drop-shadow-2xl	flex flex-col 	 h-[300px]  left-[-50px] bg-white  rounded-lg ">
-            <div className="flex-grow">
-                {
-                    basketList && basketList.map(item => (
-                        <div className="test mb-[2px] shadow   gap-1  border-b flex py-2 px-2 overflow-y-auto items-center">
-                            <div>
-                                <img src={item?.images[0]} alt={item?.title} className="object-contain w-12 rounded-md" />
-                            </div>
-                            <div>
-                                <div className="text-xs  truncate font-semibold">
-                                    {item?.title}
+        <div className="absolute w-64 z-40 drop-shadow-2xl	 shadow-lg bg-white left-[-50px] rounded ">
+
+            <motion.div
+                ref={scope}
+                whileTap={{ scale: 0.97 }} className=" flex flex-col	overflow-y-auto h-[300px]   ">
+                <div className="flex-grow">
+                    {
+                        basketList && basketList.map(item => (
+                            <div className="test mb-[2px] shadow   gap-1  border-b flex py-2 px-2  items-center">
+                                <div>
+                                    <img src={item?.images[0]} alt={item?.title} className="object-contain w-12 rounded-md" />
                                 </div>
-                                <div className="text-xs">
-                                    <span className="font-semibold">{item?.quantity}</span> <span className="font-italic">adet</span>
+                                <div>
+                                    <div className="text-xs  truncate font-semibold">
+                                        {item?.title}
+                                    </div>
+                                    <div className="text-xs">
+                                        <span className="font-semibold">{item?.quantity}</span> <span className="font-italic">adet</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
-                }
-            </div>
-            <div className="w-full h-12 flex items-center  text-white px-1 bg-customBlue">
+                        ))
+                    }
+                </div>
+
+            </motion.div>
+            <div className="w-full h-12 flex items-center  py-2  text-white px-1 bg-customBlue">
                 <span className="pr-1">Toplam Tutar: </span> {calcPrice(TOTAL)} TL
             </div>
-        </motion.div>
+        </div>
+
     )
 }
