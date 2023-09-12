@@ -9,7 +9,7 @@ function App() {
 
   return (
       <div>
-        <Toaster position="bottom-right" reverseOrder={false} />
+        <Toaster position="left-right" reverseOrder={false} />
           {showRoutes}
           <UpButton/>
       </div>

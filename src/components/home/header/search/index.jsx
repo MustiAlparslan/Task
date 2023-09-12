@@ -34,10 +34,11 @@ export const SearchBar = () => {
             dispatch(setSearchList(res));
             navigate('/lists');
         }
+        setValue("")
     };
 
     return (
-        <form onSubmit={getSearch}
+        <form onSubmit={getSearch} 
             className={classNames(
                 "flex items-center border rounded-full bg-customBlue p-1",
                 {
@@ -53,7 +54,7 @@ export const SearchBar = () => {
                 placeholder="iphone, hp..."
                 className="shadow-lg outline-none    rounded-full  border-none   w-full h-7 md:h-8   radius-lg text-xs px-1"
             />
-            <button >
+            <button disabled={!value.trim()}>
                 <AiOutlineSearch size={21} color="white" className="cursor-pointer hover:opacity-90 mx-3" />
             </button>
         </form>

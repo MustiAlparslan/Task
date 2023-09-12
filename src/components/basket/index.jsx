@@ -17,7 +17,7 @@ const Basket = () => {
             <div className="md:w-[900px]">
                 {basketList?.map(item => (
                     <div className="shadow my-2 border justify-between rounded flex-1 py-2 px-1 flex-col md:flex-row flex items-center mb-2 gap-2">
-                        <div className="flex md:items-center md:justify-start justify-center items-center gap-3 flex-col md:flex-row">
+                        <div className="flex md:items-center md:justify-start md:max-w-[632px] justify-center items-center gap-3 flex-col md:flex-row">
                             <img src={item?.images[0]} alt={item?.title} className="object-contain w-42 h-32 md:w-28 md:h-28 rounded-md" />
                             <div className="w-3/4">
                                 <p className="font-bold md:truncate  text-xs md:text-md" title={item?.description}>{item?.description}</p>
