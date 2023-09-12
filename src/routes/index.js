@@ -13,29 +13,33 @@ const Error = () => {
 const routes = [
   {
     path: "/",
-    element: <HomeLayout/>,
+    element: <HomeLayout />,
     children: [
       {
         index: true,
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "basket",
-        element: <Basket/>
+        element: <Basket />
       },
       {
         path: "favorites",
-        element: <Favorites/>
+        element: <Favorites />
       },
       {
         path: "lists",
-        element: <List/>
+        element: <List />
       },
       {
         path: ":id",
-        element: <Details/>
-      }
-    ]
+        element: <Details />
+      },
+      {
+        path: "*",
+        element: <Error />,
+      },
+    ],
   },
   {
     path: "*",

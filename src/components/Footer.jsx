@@ -20,7 +20,7 @@ export default function Footer() {
                     <div className="hover:opacity-50 hover:underline font-light">Kariyer</div>
                     <div className="hover:opacity-50 hover:underline font-light">İletişim</div>
                 </div>
-                <div className="mt-2 md:mt-1">ro
+                <div className="mt-2 md:mt-1">
                     <h2 className="font-semibold text-sm md:text-xl mb-1 	">Hakkımızda</h2>
                     <div className="hover:opacity-50 hover:underline font-light">Biz kimiz </div>
                     <div className="hover:opacity-50 hover:underline font-light">Kariyer</div>

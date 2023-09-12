@@ -4,7 +4,7 @@ import { Header } from "../components/home/header";
 import Footer from "../components/Footer";
 
 function HomeLayout() {
-  
+
   return (
     <React.Fragment>
       <div className="flex flex-col  max-w-full w-full w-min-content min-h-screen ">
@@ -12,8 +12,7 @@ function HomeLayout() {
         <div className="flex-grow  container m-auto max-w-6xl" >
           <Outlet />
         </div>
-       <Footer/>
-
+        <Footer />
       </div>
     </React.Fragment>
   );
