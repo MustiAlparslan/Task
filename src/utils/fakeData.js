@@ -50,7 +50,7 @@ export const products = [
         text: 'Harika kamera!',
         username: 'kullanici3',
         date: '2023-09-10',
-        avatarURL: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg'
+        avatarURL: '    '
       }
     ],
     favorites: ['c3'],

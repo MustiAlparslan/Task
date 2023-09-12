@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { NavBar } from "./nav"
 import { SearchBar } from "./search"
-import LOGO from '../../../testImages/Logo.png';
+import LOGO from '../../../images/Logo.png';
 
 export const Header = () => {
     return(

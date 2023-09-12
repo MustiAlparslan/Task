@@ -8,8 +8,8 @@ function App() {
   const showRoutes = useRoutes(routes);
 
   return (
-      <div>
-        <Toaster position="left-right" reverseOrder={false} />
+      <div className="w-full">
+        <Toaster position="top-left" reverseOrder={false} />
           {showRoutes}
           <UpButton/>
       </div>

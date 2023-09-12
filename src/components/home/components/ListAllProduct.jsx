@@ -10,7 +10,7 @@ export const ListAllProducts = ({ data }) => {
     if (data) {
       setTimeout(() => {
         setIsLoading(false);
-      }, 500)
+      }, 1000)
     }
   }, [data]);
 

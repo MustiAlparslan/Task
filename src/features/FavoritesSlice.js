@@ -10,7 +10,6 @@ export const favoritesSlice = createSlice({
   initialState,
   reducers: {
     deleteFavorite: (state, action) => {
-      console.log("delete ", action.payload);
       const newBasket = state.favorites.filter(item => item.id !== action.payload.id);
       state.favorites = newBasket; 
 

@@ -5,7 +5,7 @@ import { Header } from "../components/home/header";
 function HomeLayout() {
   return (
     <React.Fragment>
-      <div className="flex flex-col overflow-y-hidden  max-w-full w-full w-min-content min-h-screen ">
+      <div className="flex flex-col  max-w-full w-full w-min-content min-h-screen ">
           <Header/> 
           <div className="flex-grow  container m-auto max-w-6xl" >
             <Outlet/>

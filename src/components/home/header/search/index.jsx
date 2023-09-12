@@ -19,7 +19,6 @@ export const SearchBar = () => {
         const handleResize = () => {
             setIsSmScreen(window.innerWidth > 640);
         };
-        console.log()
         window.addEventListener("resize", handleResize);
 
         return () => {

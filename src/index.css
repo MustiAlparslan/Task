@@ -4,7 +4,11 @@
 
 
 @layer base {
-    html, body, #root{
-        @apply min-h-screen w-full  box-border  text-[#262626] 
+
+    html,
+    body,
+    #root {
+        @apply min-h-screen w-full box-border text-[#262626]
     }
+
 }

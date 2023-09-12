@@ -8,13 +8,13 @@ export function MiniBasket({ isHovered }) {
     const TOTAL = totalMoney(basketList)
 
     return (
-        <div className="absolute w-64 z-40 drop-shadow-2xl	 shadow-lg bg-white left-[-50px] rounded ">
+        <div className="absolute w-64 z-40 drop-shadow-2xl	 shadow-lg bg-white left-[-100%] rounded ">
 
             <div
                 className=" flex flex-col	overflow-y-auto h-[300px]   ">
                 <div className="flex-grow">
                     {
-                        basketList && basketList.map(item => (
+                        basketList.length ? basketList.map(item => (
                             <div className="test mb-[2px] shadow   gap-1  border-b flex py-2 px-2  items-center">
                                 <div>
                                     <img src={item?.images[0]} alt={item?.title} className="object-contain w-12 rounded-md" />
@@ -29,6 +29,8 @@ export function MiniBasket({ isHovered }) {
                                 </div>
                             </div>
                         ))
+                            :
+                            <div className="p-4">Henüz bişey eklemediniz!</div>
                     }
                 </div>
 
