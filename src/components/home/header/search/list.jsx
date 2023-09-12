@@ -10,7 +10,7 @@ export default function List() {
     const ListProducts = () => {
         return (
             <div
-                className="w-full flex items-center flex-wrap md:justify-between justify-evenly gap-3 md:gap-0 ">
+                className="w-full flex items-center flex-wrap   gap-3 md:gap-3 ">
                 {searchList?.map(itm => (
                     <Product data={itm} key={itm?.id} />
                 ))}

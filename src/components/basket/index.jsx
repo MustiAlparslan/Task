@@ -51,7 +51,7 @@ const Basket = () => {
                             <div className="pl-2 rounded py-1 bg-blue-700 text-white shadow ">Sepetinizde ({TOTAL_QUANTITY}) ürün var!</div>
                             <ListBasket />
                         </div>
-                       <OrderSummary TOTAL={TOTAL} calcPrice={calcPrice} CARCO_PRICE={CARCO_PRICE} />
+                        <OrderSummary TOTAL={TOTAL} calcPrice={calcPrice} CARCO_PRICE={CARCO_PRICE} />
                     </div>
                 </>
                 :
