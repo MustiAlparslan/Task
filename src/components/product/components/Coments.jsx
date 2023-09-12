@@ -4,10 +4,9 @@ export const Comments = () => {
 
 
   const randomNumber = Math.floor(Math.random() * (commentData.length - 1 + 1) + 1)
-
   return (
     <div className="border-t mt-2  border-[#ccc] font-semibold">
-      <h2 className="text-lg">Yorumlar ({randomNumber}) </h2>
+      <h2 className="text-lg">Yorumlar ({randomNumber - 1 }) </h2>
       {commentData?.slice(1, randomNumber)?.map(comment => (
         <div key={comment?.id} className="mx-1  rounded mb-2 border bg-[#eee] shadow-md w-full px-1 py-2">
           <div className="flex gap-1 items-center pb-1">

@@ -20,7 +20,7 @@ function Details() {
     const { onClick } = props;
     return (
       <div
-        className="border-black bg-customBlue text-white w-6 flex items-center h-6 font-semibold text-lg pb-[2px] justify-center rounded-full"
+        className="border-black hover:opacity-50 cursor-pointer bg-[#475569] text-white w-6 flex items-center h-6 font-semibold text-lg pb-[2px] justify-center rounded-full"
         onClick={onClick}
         style={{
           position: 'absolute',
@@ -38,12 +38,12 @@ function Details() {
     const { onClick } = props;
     return (
       <div
-        className="  border-black bg-customBlue text-white w-6 flex items-center h-6 font-semibold text-lg pb-[2px] justify-center rounded-full"
+        className="  border-black hover:opacity-50 cursor-pointer bg-[#475569] text-white w-6 flex items-center h-6 font-semibold text-lg pb-[2px] justify-center rounded-full"
         onClick={onClick}
         style={{
           position: 'absolute',
           top: '50%',
-          left: '-20px', // bu değeri ihtiyacınıza göre ayarlayın
+          left: '-20px', 
           zIndex: 1,
           transform: 'translateY(-50%)',
         }}
