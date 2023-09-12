@@ -12,7 +12,7 @@ function Product({ data, from, variant }) {
       className="hover:shadow-2xl	 mb-2 md:mb-6	cursor-pointer shadow-md  relative border p-2  w-[140px] md:w-[215px]  rounded-md"
       variants={variant}
     >
-      {from !== "favorites" && <FavoriteButton data={data} />}
+      {from !== "favorites" && <FavoriteButton isAbsolute={true} data={data} />}
 
       <Link to={"/" + data?.title.toLowerCase()} state={data}>
         <img src={data?.images[0]} alt={data?.title} className="object-contain w-full	  md:h-48 h-24" />

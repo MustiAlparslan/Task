@@ -6,11 +6,11 @@ const Favorites = () => {
     const _favorites = useSelector(state => state.favorites.favorites)
 
     return (
-        <div>
+        <div className="m-2">
             <div className="mb-1">
                 <div className="pl-2 rounded py-1 bg-blue-700 text-white shadow ">Favorileriniz</div>
             </div>
-            <div className="w-full flex items-center flex-wrap   gap-3 md:gap-0 ">
+            <div className="w-full flex items-center flex-wrap   gap-4 md:gap-2 ">
                 {_favorites && _favorites.length > 0 ? (
                     _favorites.map(product => (
                         <Product data={product} key={product?.id} from={"favorites"} />

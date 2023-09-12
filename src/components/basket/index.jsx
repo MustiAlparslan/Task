@@ -2,6 +2,9 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { decreaseProductQuantity, deleteBasket, increaseProductQuantity, totalMoney, totalQuantity } from "../../features/BasketSlice"
 import { BsFillTrashFill } from "react-icons/bs"
+import { calcPrice, CARCO_PRICE } from "../../utils/consts"
+import { OrderSummary } from "./components/OrderSummary"
+
 
 const Basket = () => {
     const basketList = useSelector(state => state.basket.basket)
@@ -28,7 +31,7 @@ const Basket = () => {
                                 <button disabled={item?.quantity > 10} onClick={() => dispatch(increaseProductQuantity({ id: item.id }))} className="flex-1 bg-[#ccc] px-2       h-full hover:opacity-50 cursor-pointer py-1 text-center"><b>+</b></button>
                             </div>
                             <h2 className="font-bold">{item?.quantity * item?.price} <span>TL</span></h2>
-                            <button  className="border rounded border-red-600 p-2" onClick={() => {
+                            <button className="border rounded border-red-600 p-2" onClick={() => {
                                 dispatch(deleteBasket({ id: item.id }))
                             }}>
                                 <BsFillTrashFill className="text-red-600 hover:opacity-70" />
@@ -48,14 +51,7 @@ const Basket = () => {
                             <div className="pl-2 rounded py-1 bg-blue-700 text-white shadow ">Sepetinizde ({TOTAL_QUANTITY}) ürün var!</div>
                             <ListBasket />
                         </div>
-                        <div className="mt-10 w-full  h-min border rounded max-w-xs mb-2	 shadow px-3 py-2">
-                            <h2 className="text-lg font-bold">Sipariş Özeti</h2>
-                            <p>Toplam Tutar: {TOTAL} TL</p>
-                            <p>Kargo Toplam: -100 TL</p>
-                            <hr className="my-2" />
-                            <h2 className="text-md font-semibold">Toplam {TOTAL - 100} TL</h2>
-                            <button className="w-full hover:bg-white hover:text-customBlue transition ease delay-75 hover:border hover:border-customBlue py-2 rounded-lg bg-customBlue text-white font-semibold mt-1">Sepeti Onayla</button>
-                        </div>
+                       <OrderSummary TOTAL={TOTAL} calcPrice={calcPrice} CARCO_PRICE={CARCO_PRICE} />
                     </div>
                 </>
                 :
