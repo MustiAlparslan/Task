@@ -11,7 +11,7 @@ export function SliderHero() {
     autoplay: true,
   };
   return (
-    <Slider {...settings}>
+    <Slider {...settings} arrows={false}>
       <div>
         <img className="w-full h-50 md:h-96" src="https://i.ebayimg.com/images/g/L2YAAOSw2Rhk70tv/s-l960.webp" />
       </div>
