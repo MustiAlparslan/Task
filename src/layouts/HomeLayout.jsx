@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, Outlet } from "react-router-dom";
 import { Header } from "../components/home/header";
-import Footer from "../components/Footer";
+import Footer from "../components/home/components/footer";
 
 function HomeLayout() {
 

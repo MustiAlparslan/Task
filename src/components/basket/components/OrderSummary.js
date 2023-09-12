@@ -1,11 +1,11 @@
 export const OrderSummary = ({TOTAL, CARCO_PRICE, calcPrice}) => {
     return (
-        <div className="mt-10 w-full  max-w-lg m-auto border rounded max-w-xs mb-2	  shadow px-3 py-2">
+        <div className="mt-10 w-full  max-w-lg m-auto border rounded max-w-xs mb-2 h-min	  shadow px-3 py-2">
             <h2 className="text-lg font-bold">Sipariş Özeti</h2>
             <p>Toplam Tutar: {TOTAL} TL</p>
             <div>
                 <p>Kargo ücreti: {CARCO_PRICE} TL</p>
-                <p className="text-xs text-red-700">75 TL ve  üzeri ücretsiz</p>
+                <p className="text-xs text-red-700">75 TL ve  üzeri ücretsiz kargo</p>
             </div>
             <hr className="my-2" />
             <h2 className="text-md font-semibold">Toplam {calcPrice(TOTAL)} TL</h2>

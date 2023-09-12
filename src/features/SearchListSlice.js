@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { LocalStorage } from '../utils/localStorage';
 
 const initialState = {
     searchList: []

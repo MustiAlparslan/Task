@@ -43,7 +43,7 @@ function Details() {
         style={{
           position: 'absolute',
           top: '50%',
-          left: '-20px', 
+          left: '-20px',
           zIndex: 1,
           transform: 'translateY(-50%)',
         }}

@@ -5,7 +5,7 @@ import { FakeLoading } from "../../product/components/FakeLoading";
 
 export const ListAllProducts = ({ data }) => {
   const [isLoading, setIsLoading] = useState(true);
-  
+
   useEffect(() => {
     if (data) {
       setTimeout(() => {
@@ -39,7 +39,7 @@ export const ListAllProducts = ({ data }) => {
       {isLoading ? (
         <div
           className="w-full flex flex items-center flex-wrap md:justify-between justify-evenly gap-3 md:gap-0 ">
-          {([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).map((itm,index) => (
+          {Array.from({ length: 15 }).map((itm, index) => (
             <FakeLoading key={index} />
           ))}
         </div>

@@ -5,14 +5,14 @@ import { Toaster } from "react-hot-toast";
 import UpButton from "./components/UpButton"
 
 function App() {
-  const showRoutes = useRoutes(routes);
+  const ShowRoutes = useRoutes(routes);
 
   return (
-      <div className="w-full">
-        <Toaster position="top-left" reverseOrder={false} />
-          {showRoutes}
-          <UpButton/>
-      </div>
+    <div className="w-full">
+      <Toaster position="top-left" reverseOrder={false} />
+      {ShowRoutes}
+      <UpButton />
+    </div>
 
   );
 }

@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import BasketSlice from "./features/BasketSlice"
 import FavoritesSlice from "./features/FavoritesSlice"
-import SearchListSlice from './features/SearcListSlice';
+import SearchListSlice from './features/SearchListSlice';
 
 export const localStorageMiddleware = store => next => action => {
   let result = next(action);
@@ -16,6 +16,5 @@ export const store = configureStore({
     favorites: FavoritesSlice,
     searchList: SearchListSlice
   },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(localStorageMiddleware),
-
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(localStorageMiddleware),
 })

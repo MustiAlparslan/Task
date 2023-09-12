@@ -3,7 +3,7 @@ import { AiOutlineSearch } from "../../../../icons"
 import { Requests } from "../../../../requests/requests"
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
-import { setSearchList } from "../../../../features/SearcListSlice"
+import { setSearchList } from "../../../../features/SearchListSlice"
 import classNames from "classnames"
 
 export const SearchBar = () => {
