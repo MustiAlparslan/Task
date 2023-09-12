@@ -11,24 +11,24 @@ const Basket = () => {
 
     const ListBasket = () => {
         return (
-            <div>
+            <div className="md:w-[900px]">
                 {basketList?.map(item => (
-                    <div className="shadow my-2 border justify-between rounded flex-1 py-2 px-1 flex items-center mb-2 gap-2">
-                        <div className="flex md:items-center gap-3 flex-col md:flex-row">
-                            <img src={item?.images[0]} alt={item?.title} className="object-contain w-28 h-28 rounded-md" />
-                            <div className="w-3/4 ">
-                                <p className="font-bold truncate text-sm md:text-md">{item?.description}</p>
+                    <div className="shadow my-2 border justify-between rounded flex-1 py-2 px-1 flex-col md:flex-row flex items-center mb-2 gap-2">
+                        <div className="flex md:items-center md:justify-start justify-center items-center gap-3 flex-col md:flex-row">
+                            <img src={item?.images[0]} alt={item?.title} className="object-contain w-42 h-32 md:w-28 md:h-28 rounded-md" />
+                            <div className="w-3/4">
+                                <p className="font-bold md:truncate  text-xs md:text-md" title={item?.description}>{item?.description}</p>
                                 <h2 className="text-xs md:text-sm " >{item?.title}</h2>
                             </div>
                         </div>
-                        <div className="flex items-center gap-5">
-                            <div className="flex rounded items-center bg-[#ccc] w-16   gap-2  ">
-                                <button onClick={() => dispatch(decreaseProductQuantity({ id: item.id }))} className="flex-1  h-full hover:opacity-50 cursor-pointer py-1 text-center"><b>-</b></button>
-                                <div className="py-1"><b>{item?.quantity}</b></div>
-                                <div onClick={() => dispatch(increaseProductQuantity({ id: item.id }))} className="py-1 flex-1  h-full hover:opacity-50 cursor-pointer text-center"><b>+</b></div>
+                        <div className="flex items-center max-w-[250px]   md:border-none gap-5 border-t md:justify-around md:pt-0 pt-1 w-full justify-center">
+                            <div className="flex rounded items-center   border    gap-2  ">
+                                <button onClick={() => dispatch(decreaseProductQuantity({ id: item.id }))} className="flex-1 bg-[#ccc] px-2    h-full hover:opacity-50 cursor-pointer py-1 text-center"><b>-</b></button>
+                                <div className="py-1  "><b>{item?.quantity}</b></div>
+                                <button disabled={item?.quantity > 10} onClick={() => dispatch(increaseProductQuantity({ id: item.id }))} className="flex-1 bg-[#ccc] px-2       h-full hover:opacity-50 cursor-pointer py-1 text-center"><b>+</b></button>
                             </div>
-                            <h2> {item?.quantity * item?.price} <span>TL</span></h2>
-                            <button onClick={() => {
+                            <h2 className="font-bold">{item?.quantity * item?.price} <span>TL</span></h2>
+                            <button  className="border rounded border-red-600 p-2" onClick={() => {
                                 dispatch(deleteBasket({ id: item.id }))
                             }}>
                                 <BsFillTrashFill className="text-red-600 hover:opacity-70" />
@@ -40,15 +40,15 @@ const Basket = () => {
         )
     }
     return (
-        <div>
+        <div className="px-4 md:px-0">
             {basketList?.length ?
                 <>
                     <div className="w-full flex gap-3 flex-col md:flex-row justify-between">
                         <div>
-                            <h2 className="pl-2">Sepetinizde ({TOTAL_QUANTITY}) ürün var!</h2>
+                            <div className="pl-2 rounded py-1 bg-blue-700 text-white shadow ">Sepetinizde ({TOTAL_QUANTITY}) ürün var!</div>
                             <ListBasket />
                         </div>
-                        <div className="mt-8 w-full  h-min border rounded w-1/4 shadow px-3 py-2">
+                        <div className="mt-10 w-full  h-min border rounded max-w-xs mb-2	 shadow px-3 py-2">
                             <h2 className="text-lg font-bold">Sipariş Özeti</h2>
                             <p>Toplam Tutar: {TOTAL} TL</p>
                             <p>Kargo Toplam: -100 TL</p>

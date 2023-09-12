@@ -28,7 +28,7 @@ const UpButton = () => {
   return (
     isVisible && (
       <div
-        className="bg-customBlue text-white hover:opacity-50 cursor-pointer w-12 h-12 flex items-center justify-center bottom-5 fixed right-5 rounded-full shadow-md"
+        className="bg-customBlue text-white hover:opacity-50 cursor-pointer w-12 h-12 flex items-center justify-center md:bottom-5 fixed md:right-5 right-12 bottom-5  rounded-full shadow-md"
         onClick={scrollToTop}
       >
         <AiOutlineArrowUp size={24} />

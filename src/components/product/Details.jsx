@@ -5,6 +5,7 @@ import { setBasket } from '../../features/BasketSlice'
 import { Comments } from "./components/Coments"
 import { Star } from "./components/Star"
 import Slider from "react-slick"
+import { FavoriteButton } from "./components/FavoriteButton"
 
 function Details() {
   const { state } = useLocation() 
@@ -38,11 +39,13 @@ function Details() {
           <ul className="my-3">
             <li>{state?.description}</li>
           </ul>
-          <button className="bg-customBlue hover:bg-white hover:text-customBlue   hover:border hover:border-customBlue px-3 py-1 rounded text-white font-semibold   w-48" onClick={addBasket}>{state?.price} <span>TL</span></button>
+          <div className="flex items-center gap-1">
+            <button className="bg-customBlue hover:bg-white hover:text-customBlue   hover:border hover:border-customBlue px-3 py-1 rounded text-white font-semibold   w-48" onClick={addBasket}>{state?.price} <span>TL</span></button>
+            <FavoriteButton data={state} size={21} className="text-red-300"/>
+          </div>
         </div>
       </div>
-
-      {/* <Comments state={state} /> */}
+      <Comments state={state} />
     </div>
   );
 }

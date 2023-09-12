@@ -12,7 +12,9 @@ export const basketSlice = createSlice({
     increaseProductQuantity : (state,action) => {
       const itemIndex = state.basket.findIndex(item => item.id === action.payload.id);
       if (itemIndex !== -1) {
-        state.basket[itemIndex].quantity = (state.basket[itemIndex].quantity || 1) + 1;
+          if(state.basket[itemIndex].quantity < 10){
+            state.basket[itemIndex].quantity = (state.basket[itemIndex].quantity || 1) + 1;
+          }
       } 
     },
     decreaseProductQuantity : (state,action) => {
