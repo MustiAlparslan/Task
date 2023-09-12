@@ -13,7 +13,7 @@ export const NavBar = () => {
     const TOTAL_QUANTITY = totalQuantity(basketList)
 
     return (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 pr-4 md:pr-0">
             <div>
                 <Link to={"/favorites"} className="hover:opacity-50 text-customBlue flex gap-1 items-center"><AiOutlineHeart size={18} />
                     <span className="md:inline hidden">Favorilerim</span>
@@ -33,7 +33,7 @@ export const NavBar = () => {
                         <AiOutlineShoppingCart size={18} />
                         <span className="md:inline hidden">Sepetim</span>
                     </Link>
-                    <div className={isHovered ? 'visible' : 'invisible'}>
+                    <div className={`${isHovered ? 'visible' : 'invisible'} md:block hidden`}>
                         <MiniBasket isHovered={isHovered} />
                     </div>
                 </div>

@@ -20,7 +20,7 @@ function Details() {
     const { onClick } = props;
     return (
       <div
-        className="  border-black bg-customBlue text-white w-6 flex items-center h-6 font-semibold text-lg pb-[2px] justify-center rounded-full"
+        className="border-black bg-customBlue text-white w-6 flex items-center h-6 font-semibold text-lg pb-[2px] justify-center rounded-full"
         onClick={onClick}
         style={{
           position: 'absolute',
@@ -62,10 +62,10 @@ function Details() {
     prevArrow: <CustomPrevArrow />,
   };
   return (
-    <div>
-      <div className="flex border flex-col md:flex-row  shadow mb-3">
-        <div className="rounded w-full  md:w-72 mb-6 px-2 py-1 ">
-          <Slider {...settings}>
+    <div >
+      <div className="flex mx-7 border flex-col md:flex-row  shadow mb-3">
+        <div className="rounded w-full  md:w-72 mb-6 px-2 py-1 bg-blue-300 ">
+          <Slider {...settings} className="bg-red-300 ">
             {state?.images?.map((itm, index) => (
               <img key={index} src={itm} alt={state?.productName} className="w-72 mr-2 h-96 object-contain" />
             ))}
