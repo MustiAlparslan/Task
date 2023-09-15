@@ -7,6 +7,10 @@ import { motion } from "framer-motion";
 
 function Product({ data, from, variant }) {
 
+  const saveDataToLocalStorage  = (data) => {
+    localStorage.setItem("details", JSON.stringify(data))
+  }
+
   return (
     <motion.div
       className="hover:shadow-2xl	 mb-1 md:mb-6	cursor-pointer shadow-md  relative border p-2  w-[145px] md:w-[215px]  rounded-md"
@@ -15,7 +19,7 @@ function Product({ data, from, variant }) {
     >
       {from !== "favorites" && <FavoriteButton isAbsolute={true} data={data} />}
 
-      <Link to={"/" + data?.title.toLowerCase()} state={data}>
+      <Link to={"/" + data?.title.toLowerCase()} state={data} onClick={() => saveDataToLocalStorage(data)}>
         <img src={data?.images[0]} alt={data?.title} className="object-contain w-full	  md:h-48 h-24" />
         <h2 className="md:text-sm text-xs truncate font-semibold" title={data?.title}>{data?.title}</h2>
         <Star rating={data?.rating} />

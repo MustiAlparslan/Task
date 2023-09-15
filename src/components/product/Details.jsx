@@ -12,6 +12,17 @@ function Details() {
   const { state } = useLocation()
   const dispatch = useDispatch()
 
+
+
+  useEffect(() => {
+    if (!state) {
+      const storedDetails = localStorage.getItem("details");
+      if (storedDetails) {
+        state = JSON.parse(storedDetails);
+      }
+    }
+  }, []);
+  
   const addBasket = () => {
     dispatch(setBasket(state))
     toast.success("Sepete eklendi")
