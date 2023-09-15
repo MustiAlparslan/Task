@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { useDispatch } from 'react-redux'
 import { setBasket } from '../../features/BasketSlice'
@@ -9,10 +9,25 @@ import { FavoriteButton } from "./components/FavoriteButton"
 import toast from "react-hot-toast"
 
 function Details() {
-  const { state } = useLocation()
+  const { state: locationState } = useLocation(); 
+  const [state, setState] = useState(locationState); 
   const dispatch = useDispatch()
 
 
+  useEffect(() => {
+    if (locationState?.id) {
+      localStorage.setItem("lastVisitedProductId", locationState?.title);
+    }
+  }, [locationState]);
+
+  useEffect(() => {
+    if (!state) {
+      const storedDetails = localStorage.getItem("details");
+      if (storedDetails) {
+        setState(JSON.parse(storedDetails)); 
+      }
+    }
+  }, []);
 
   useEffect(() => {
     if (!state) {
