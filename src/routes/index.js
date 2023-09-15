@@ -35,10 +35,7 @@ const routes = [
         path: ":id",
         element: <Details />
       },
-      {
-        path: "*",
-        element: <Error />,
-      },
+      
     ],
   },
   {

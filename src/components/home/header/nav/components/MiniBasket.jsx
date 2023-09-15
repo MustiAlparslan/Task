@@ -17,7 +17,7 @@ export function MiniBasket({ isHovered }) {
                 <div className="flex-grow">
                     {
                         basketList.length ? basketList.map(item => (
-                            <div className="test mb-[2px] shadow   gap-1 justify-between border-b flex py-2 px-2  items-center">
+                            <div key={item?.id} className="test mb-[2px] shadow   gap-1 justify-between border-b flex py-2 px-2  items-center">
                                 <div className="flex items-center gap-1 ">
                                     <div>
                                         <img src={item?.images[0]} alt={item?.title} className="object-contain w-12 rounded-md" />
