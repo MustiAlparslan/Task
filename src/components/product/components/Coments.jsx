@@ -4,6 +4,7 @@ export const Comments = () => {
 
 
   const randomNumber = Math.floor(Math.random() * (commentData.length - 1 + 1) + 1)
+  
   return (
     <div className="border-t mt-2  border-[#ccc] font-semibold">
       <h2 className="text-lg">Yorumlar ({randomNumber - 1 }) </h2>

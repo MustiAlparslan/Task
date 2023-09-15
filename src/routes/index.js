@@ -8,8 +8,8 @@ import List from "../components/home/header/search/list";
 
 const Error = () => {
   return <div>404 Not Found!</div>;
-
 };
+
 const routes = [
   {
     path: "/",
@@ -35,7 +35,6 @@ const routes = [
         path: ":id",
         element: <Details />
       },
-      
     ],
   },
   {

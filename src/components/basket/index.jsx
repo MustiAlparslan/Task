@@ -17,7 +17,7 @@ const Basket = () => {
         return (
             <div className="md:w-[900px]">
                 {basketList?.map(item => (
-                    <Link to={"/" + item?.title.toLowerCase()} state={item} className="shadow my-2 border justify-between rounded flex-1 py-2 px-1 flex-col md:flex-row flex items-center mb-2 gap-2">
+                    <div className="shadow my-2 border justify-between rounded flex-1 py-2 px-1 flex-col md:flex-row flex items-center mb-2 gap-2">
                         <div className="flex md:items-center md:justify-start md:max-w-[632px] justify-center items-center gap-3 flex-col md:flex-row">
                             <img src={item?.images[0]} alt={item?.title} className="object-contain w-42 h-32 md:w-28 md:h-28 rounded-md" />
                             <div className="w-3/4">
@@ -38,7 +38,7 @@ const Basket = () => {
                                 <BsFillTrashFill className="text-red-600 hover:opacity-70" />
                             </button>
                         </div>
-                    </Link>
+                    </div>
                 ))}
             </div>
         )
